@@ -1,17 +1,17 @@
 # RDF-Rust
 
 Partial and total radial distribution functions (PRDF / RDF) for crystal
-structures, with native support for partially occupied sites.
+structures, with a direct support for partially occupied sites.
 
 **⚙️ Rust backend, 🐍 Python frontend.** The neighbour search, the histogramming
-and the CIF parsing run in compiled Rust, in parallel across cores.
+and the CIF parsing run in compiled Rust, and can run in parallel across cores.
 
-- **~100× faster than Matminer on a single core**, and **~340× faster on four
-  cores**: 13,720 atoms in 144 ms (42 ms on four cores) instead of 14.3 s.
-- ⚡ **~2× faster than Vesin, core for core** (1.5–2.2×).
+- ⚡ **~100× faster than Matminer on a single core**, and **~340× faster on four
+  cores**: 13 720 atoms in 144 ms (42 ms on four cores) instead of 14.3 s.
+- ⚡ **~2× faster than Vesin, core for core** (1.5 - 2.2×).
 - **Under 1 MB of memory at any size.** Matminer needs 3.2 GB and Vesin
-  454 MB for the same 13,720 atoms.
-- **Partial occupancies handled directly**: no supercell, no random seed.
+  454 MB for the same 13 720 atoms.
+- **Partial occupancies handled directly**
 
 ---
 
@@ -38,12 +38,10 @@ r                         # left edge of each bin
 and `n_threads=0` uses every core. A complete runnable script is in
 [`examples/run_prdf.py`](https://github.com/bracerino/rdf-rust/blob/main/examples/run_prdf.py).
 
-Every element pair is computed automatically: there is no element list to pass.
-A five-element alloy gives all 25 partials, keyed as `(A, B)` tuples.
 
 ### 📈 Saving plots
 
-Add `save_plots` and the curves are also written to a folder as clean figures,
+Add `save_plots` and the curves are also written to a folder as  figures,
 with the numbers in a CSV. It is off by default.
 
 ```python
@@ -55,7 +53,7 @@ one `partial_A-B.png` per pair, and `rdf.csv`.
 
 ## 🎞️ MD trajectories
 
-Multi-frame XYZ files, as written by MD codes, are read directly. Choose how
+Multi-frame extended XYZ files are read directly. Choose how
 often a frame is analysed with `every`:
 
 ```python
@@ -74,42 +72,25 @@ With `save_plots` it writes the **trajectory-averaged** total and partial RDFs
 frame (`total_rdf_animation.gif`, `partial_rdfs_animation.gif`), and the data
 as CSV.
 
-It also writes **`rdf_animation.html`**, an interactive player: play and pause,
-step frame by frame, drag through the run with a slider, change the speed from
-0.25× to 8×, and use the keyboard (space, arrows, + and −). Both animations move
-together. The page is a single file that works offline.
+It also writes **`rdf_animation.html`**, an interactive player.
 
-While it runs, progress is printed with the time elapsed and the time left:
-
-```
-[rdfrust] data.xyz: using 101 of 505 frame(s) (every 5, from frame 0), read in 0.4 s
-[rdfrust] frames  20/101 ( 20%)  4.1 s elapsed, ~16.6 s left
-[rdfrust] frames  40/101 ( 40%)  8.2 s elapsed, ~12.5 s left
-```
-
-- Frames with their own `Lattice="..."` keep their own box, so NPT runs work.
-- Plain XYZ has no cell: pass it with `cell=[a, b, c]` or a 3×3 matrix.
-- Unwrapped coordinates (atoms outside the box) are handled.
-- `start` and `stop` limit the frame range; skipped frames are not parsed, so
-  `every=10` on a long run stays fast.
-
-A runnable demo that writes and analyses a small trajectory:
-[`examples/md_trajectory.py`](https://github.com/bracerino/rdf-rust/blob/main/examples/md_trajectory.py).
 
 ## 🌐 Online app
 
-Use it in the browser, nothing to install:
+Use it in the browser:
 **[prdf-xrdlicious.streamlit.app](https://prdf-xrdlicious.streamlit.app/)**
 
-`prdf_app.py` in this repository is that app: the XRDlicious (P)RDF calculator,
+`prdf_app.py` is the XRDlicious (P)RDF calculator,
 with RDF-Rust, Vesin and Matminer as selectable methods. To run it locally:
 
 ```bash
+git clone https://github.com/bracerino/rdf-rust.git
+cd rdf-rust
 pip install -r requirements.txt
 streamlit run prdf_app.py
 ```
 
-## 🚀 Speed and 💾 memory
+## ⚡ Speed and memory
 
 RDF-Rust on **1 thread** (serial, like Matminer and Vesin) and on **4 threads**:
 
@@ -130,9 +111,6 @@ Memory stays flat because pairs go straight from the neighbour search into the
 histogram and are never stored. Matminer and Vesin keep every pair distance,
 so their memory grows with the structure.
 
-Results match Matminer to 3.6 × 10⁻¹⁵ (double-precision noise). Full numbers,
-structure types, thread scaling and the data behind every figure:
-**[BENCHMARKS.md](https://github.com/bracerino/rdf-rust/blob/main/BENCHMARKS.md)**.
 
 ## 🧩 Partial occupancies
 
@@ -174,16 +152,3 @@ RDF-Rust is part of the XRDlicious project. If you use it, please cite:
   high-throughput and machine-learning-driven materials science.
   *Journal of Applied Crystallography* **59**(4), 1344–1350 (2026).
   [journals.iucr.org](https://journals.iucr.org/j/issues/2026/04/00/hat5023/index.html)
-- **RDF-Rust:** this repository,
-  [github.com/bracerino/rdf-rust](https://github.com/bracerino/rdf-rust).
-
-## Tests
-
-```bash
-cargo test --lib     # Rust unit tests
-pytest tests/ -q     # CIF, formats, neighbours, RDF, disorder physics
-```
-
-## License
-
-MIT
