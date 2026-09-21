@@ -12,7 +12,7 @@ python benchmarks/compare_methods.py --threads 1 --plot   # re-plot, no re-measu
 ```
 
 Every timing runs in its own subprocess. glibc keeps freed pages mapped, so a
-second in-process reading of the same backend comes out far too low — the same
+second in-process reading of the same backend comes out far too low: the same
 matminer call measured 722 MB, then 356 MB, then 331 MB. `tracemalloc` is no
 use either: it only sees the Python heap, reporting RDF-Rust as 0.0 MB and
 missing most of Vesin's.
@@ -28,7 +28,7 @@ A perfect crystal is a poor benchmark on its own, so the set has three groups.
 | **md** | Cu (a = 3.600 Å) and SrTiO₃ (a = 3.900 Å) at σ = 0 → 0.50 Å RMS | what an MD snapshot looks like, and the commensurate case where bin-edge ties appear |
 
 The variety group is Cu FCC, Fe BCC, Si diamond, Ti HCP, NaCl rocksalt,
-SrTiO₃ perovskite and a CoCrFeMnNi high-entropy alloy — densities from 0.045 to
+SrTiO₃ perovskite and a CoCrFeMnNi high-entropy alloy: densities from 0.045 to
 0.087 atoms/Å³, one to five elements, cubic through hexagonal. The HEA is the
 stress case for the histogram, since five elements mean 25 partials.
 
@@ -52,13 +52,13 @@ Positions come from a seeded generator, so the set regenerates identically.
 Python list (~660 bytes per pair) and Vesin in NumPy arrays (~97 bytes per
 pair), so both grow linearly with the pair count. RDF-Rust streams pairs from
 the cell list into a per-thread histogram and discards them, so its footprint
-is the histogram plus the cell list — independent of size. At 13,720 atoms
+is the histogram plus the cell list, independent of size. At 13,720 atoms
 matminer needs 3.2 GB, which is the practical ceiling on an ordinary machine
 long before the runtime is.
 
 **Read the speed-up honestly.** Against matminer the gap is algorithmic: its
 inner loop appends every pair distance to a Python list one at a time. Against
-Vesin — already a fast C++ neighbour list with vectorised NumPy histogramming —
+Vesin, already a fast C++ neighbour list with vectorised NumPy histogramming,
 the 1-thread run is the fair comparison: RDF-Rust is **1.5–2.2× faster** core
 for core. The 4-thread run shows what the parallel histogramming adds on top.
 
@@ -95,7 +95,7 @@ A perfect crystal can be the *hard* case for an RDF, but only under a condition
 that is easy to miss: the lattice spacing has to be **commensurate with the bin
 width**. At a = 3.600 Å with 0.1 Å bins the neighbour distances are exact
 multiples of an edge, and the last few ulp then decide which of two
-neighbouring bins each count falls into — two independently written neighbour
+neighbouring bins each count falls into: two independently written neighbour
 searches disagree on those bins while conserving the total exactly. At the true
 a = 3.615 Å of copper the same lattice produces **zero** ties, because 36.15 is
 not an integer.
@@ -137,7 +137,7 @@ occupancies to whatever the supercell allows and commits to one arrangement.
 see them.
 
 - **Ordered structures:** RDF-Rust matches matminer to **3.6 × 10⁻¹⁵** on every
-  pair at every size — double-precision noise. Vesin matches exactly.
+  pair at every size, which is double-precision noise. Vesin matches exactly.
 - **Disordered structures:** the occupancy-weighted curve lies on the mean of
   400 explicitly sampled random supercells.
 
@@ -155,17 +155,17 @@ slab-like cells, cutoffs from 2 to 20 Å and bin sizes from 0.01 to 1.0 Å.
    matminer's g_OO comes out **half** its proper value. The same applies to
    cells of pure N, H, F, Cl, Br or I. RDF-Rust and Vesin both count atoms
    directly and agree with each other; matminer is the outlier. Ordinary
-   multi-element compositions are unaffected — verified for SrTiO₃, Fe₂O₃,
+   multi-element compositions are unaffected: verified for SrTiO₃, Fe₂O₃,
    TiO₂, Al₂O₃, NaCl, H₂O and CH₄.
 
 ## Citing the backends compared here
 
-- **Vesin** (part of the metatensor/metatomic stack) —
+- **Vesin** (part of the metatensor/metatomic stack):
   Bigi, F.; Abbott, J. W.; *et al.* *metatensor and metatomic: Foundational
   libraries for interoperable atomistic machine learning.*
   **J. Chem. Phys.** 2026, **164** (6), 064113.
   [doi:10.1063/5.0304911](https://doi.org/10.1063/5.0304911)
-- **matminer** —
+- **matminer**:
   Ward, L.; *et al.* *Matminer: An open source toolkit for materials data
   mining.* **Comput. Mater. Sci.** 2018, **152**, 60–69.
   [doi:10.1016/j.commatsci.2018.05.018](https://doi.org/10.1016/j.commatsci.2018.05.018)

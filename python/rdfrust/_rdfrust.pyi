@@ -1,5 +1,5 @@
 """Type stubs for the compiled Rust extension."""
-from typing import Any, Dict, List, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 from numpy.typing import NDArray
@@ -47,7 +47,12 @@ class Structure:
     def species(self) -> List[Dict[str, float]]: ...
     def make_supercell(self, na: int, nb: int, nc: int) -> "Structure": ...
     def prdf(
-        self, cutoff: float = 10.0, bin_size: float = 0.1, n_threads: int = 0
+        self,
+        cutoff: float = 10.0,
+        bin_size: float = 0.1,
+        n_threads: int = 0,
+        save_plots: Optional[str] = None,
+        title: Optional[str] = None,
     ) -> Tuple[
         NDArray[np.float64],
         Dict[Tuple[str, str], NDArray[np.float64]],
@@ -60,3 +65,12 @@ class Structure:
         self, max_sites: int = 4096, seed: int = 42, max_denominator: int = 16
     ) -> Tuple["Structure", Dict[str, Any]]: ...
     def disorder_summary(self) -> List[Dict[str, Any]]: ...
+
+
+def read_xyz_trajectory(
+    path: str,
+    every: int = 1,
+    start: int = 0,
+    stop: Optional[int] = None,
+    cell: Optional[Sequence[Sequence[float]]] = None,
+) -> Tuple[List[Structure], List[int], int]: ...

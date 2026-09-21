@@ -76,7 +76,59 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-css = '\n<style>\n.stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {\n    font-size: 1.15rem !important;\n    color: #1e3a8a !important;\n    font-weight: 600 !important;\n    margin: 0 !important;\n}\n\n.stTabs [data-baseweb="tab-list"] {\n    gap: 20px !important;\n}\n\n.stTabs [data-baseweb="tab-list"] button {\n    background-color: #f0f4ff !important;\n    border-radius: 12px !important;\n    padding: 8px 16px !important;\n    transition: all 0.3s ease !important;\n    border: none !important;\n    color: #1e3a8a !important;\n}\n\n.stTabs [data-baseweb="tab-list"] button:hover {\n    background-color: #dbe5ff !important;\n    cursor: pointer;\n}\n\n.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {\n    background-color: #e0e7ff !important;\n    color: #1e3a8a !important;\n    font-weight: 700 !important;\n    box-shadow: 0 2px 6px rgba(30, 58, 138, 0.3) !important;\n}\n\n.stTabs [data-baseweb="tab-list"] button:focus {\n    outline: none !important;\n}\n</style>\n'
+# Tab styling. Streamlit 1.60+ builds tabs with React Aria: each tab is
+# [data-testid="stTab"] inside a [role="tablist"], and its state is exposed as
+# [data-selected] / [data-hovered]. Earlier releases used BaseWeb
+# ([data-baseweb="tab-list"] > button, aria-selected). Both are targeted, so the
+# look holds on either side of that change.
+css = """
+<style>
+.stTabs [role="tablist"],
+.stTabs [data-baseweb="tab-list"] {
+    gap: 20px !important;
+}
+
+.stTabs [data-testid="stTab"],
+.stTabs [data-baseweb="tab-list"] button {
+    background-color: #f0f4ff !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    /* The new tabs have a fixed height; let the padding set it instead. */
+    height: auto !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    color: #1e3a8a !important;
+}
+
+.stTabs [data-testid="stTab"] [data-testid="stMarkdownContainer"] p,
+.stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+    font-size: 1.15rem !important;
+    color: #1e3a8a !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+.stTabs [data-testid="stTab"][data-hovered],
+.stTabs [data-testid="stTab"]:hover,
+.stTabs [data-baseweb="tab-list"] button:hover {
+    background-color: #dbe5ff !important;
+    cursor: pointer;
+}
+
+.stTabs [data-testid="stTab"][data-selected],
+.stTabs [data-testid="stTab"][aria-selected="true"],
+.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+    background-color: #e0e7ff !important;
+    color: #1e3a8a !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(30, 58, 138, 0.3) !important;
+}
+
+.stTabs [data-baseweb="tab-list"] button:focus {
+    outline: none !important;
+}
+</style>
+"""
 st.markdown(css, unsafe_allow_html=True)
 import os, tempfile, zipfile
 from collections import defaultdict

@@ -22,10 +22,14 @@ Typical use::
 import os
 import sys
 
-from ._rdfrust import Structure, __version__
+from ._rdfrust import Structure, __version__, read_xyz_trajectory
+from .trajectory import TrajectoryRDF, read_trajectory, trajectory_prdf
 
 __all__ = [
     "Structure",
+    "read_trajectory",
+    "trajectory_prdf",
+    "TrajectoryRDF",
     "read",
     "from_pymatgen",
     "describe_disorder",

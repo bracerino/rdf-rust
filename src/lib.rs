@@ -8,6 +8,7 @@ mod neighbor;
 mod rdf;
 mod structure;
 mod symmetry;
+mod trajectory;
 
 use lattice::Lattice;
 use numpy::{IntoPyArray, PyArray1};
@@ -228,13 +229,17 @@ impl PyStructure {
     /// Partial and total RDF.
     ///
     /// Returns (r, partials, total) where `partials` maps ("A", "B") to g_AB.
-    #[pyo3(signature = (cutoff=10.0, bin_size=0.1, n_threads=0))]
+    /// With `save_plots="some/folder"` the curves are also written there as
+    /// figures plus a CSV (needs matplotlib); None, the default, saves nothing.
+    #[pyo3(signature = (cutoff=10.0, bin_size=0.1, n_threads=0, save_plots=None, title=None))]
     fn prdf<'py>(
         &self,
         py: Python<'py>,
         cutoff: f64,
         bin_size: f64,
         n_threads: usize,
+        save_plots: Option<String>,
+        title: Option<String>,
     ) -> PyResult<(Bound<'py, PyArray1<f64>>, Bound<'py, PyDict>, Bound<'py, PyArray1<f64>>)> {
         let res = py
             .allow_threads(|| rdf::compute_prdf(&self.inner, cutoff, bin_size, n_threads))
@@ -248,11 +253,21 @@ impl PyStructure {
                 dict.set_item(key, vals.into_pyarray(py))?;
             }
         }
-        Ok((
-            res.bin_centers.into_pyarray(py),
-            dict,
-            res.total.into_pyarray(py),
-        ))
+        let r = res.bin_centers.into_pyarray(py);
+        let total = res.total.into_pyarray(py);
+        if let Some(dir) = save_plots {
+            // Plotting lives on the Python side, where matplotlib is.
+            let kw = PyDict::new(py);
+            kw.set_item("bin_size", bin_size)?;
+            kw.set_item("title", title)?;
+            kw.set_item("density", self.inner.n_atoms() / self.inner.lattice.volume())?;
+            py.import("rdfrust.plotting")?.call_method(
+                "save_prdf_plots",
+                (r.clone(), dict.clone(), total.clone(), dir),
+                Some(&kw),
+            )?;
+        }
+        Ok((r, dict, total))
     }
 
     /// Total RDF only.
@@ -324,9 +339,45 @@ impl PyStructure {
     }
 }
 
+/// Read selected frames of a multi-frame XYZ trajectory.
+///
+/// Keeps frames start, start + every, ... before stop. Returns
+/// (structures, frame_indices, frames_read).
+#[pyfunction]
+#[pyo3(signature = (path, every=1, start=0, stop=None, cell=None))]
+fn read_xyz_trajectory(
+    py: Python<'_>,
+    path: &str,
+    every: usize,
+    start: usize,
+    stop: Option<usize>,
+    cell: Option<Vec<Vec<f64>>>,
+) -> PyResult<(Vec<PyStructure>, Vec<usize>, usize)> {
+    let cell = match cell {
+        None => None,
+        Some(c) => {
+            if c.len() != 3 || c.iter().any(|r| r.len() != 3) {
+                return Err(err("cell must be 3x3".into()));
+            }
+            Some([
+                [c[0][0], c[0][1], c[0][2]],
+                [c[1][0], c[1][1], c[1][2]],
+                [c[2][0], c[2][1], c[2][2]],
+            ])
+        }
+    };
+    let path = path.to_string();
+    let t = py
+        .allow_threads(move || trajectory::read_xyz_trajectory(&path, every, start, stop, cell))
+        .map_err(err)?;
+    let frames = t.frames.into_iter().map(|inner| PyStructure { inner }).collect();
+    Ok((frames, t.indices, t.n_read))
+}
+
 #[pymodule]
 fn _rdfrust(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<PyStructure>()?;
+    m.add_function(wrap_pyfunction!(read_xyz_trajectory, m)?)?;
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     Ok(())
 }

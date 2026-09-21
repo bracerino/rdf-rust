@@ -8,7 +8,7 @@ to another project cannot create a new one.
 
 To cut a release:
 
-1. Bump the version in **both** `Cargo.toml` and `pyproject.toml` — they must
+1. Bump the version in **both** `Cargo.toml` and `pyproject.toml`: they must
    match, or the wheel and its metadata disagree.
 2. `cargo test --lib && pytest tests/ -q`
 3. Commit, then tag and push:

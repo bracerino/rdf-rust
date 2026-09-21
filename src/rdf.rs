@@ -92,7 +92,25 @@ fn compute_prdf_inner(
     let el_index = |name: &str| elements.iter().position(|e| e == name).unwrap();
 
     // Flatten the sites so the hot loop touches plain slices only.
-    let fracs: Vec<[f64; 3]> = structure.sites.iter().map(|s| s.frac).collect();
+    // Coordinates are wrapped into [0, 1) first. The cell list files each atom
+    // under its wrapped position but measures distances from the stored one,
+    // so an atom sitting outside the cell (an unwrapped MD frame, or a
+    // structure built with such coordinates) would otherwise be paired with
+    // the wrong periodic images.
+    let fracs: Vec<[f64; 3]> = structure
+        .sites
+        .iter()
+        .map(|s| {
+            let mut f = s.frac;
+            for x in f.iter_mut() {
+                *x -= x.floor();
+                if *x >= 1.0 {
+                    *x = 0.0; // -1e-17 floors to -1 and lands on 1.0
+                }
+            }
+            f
+        })
+        .collect();
     let mut sp_start = Vec::with_capacity(structure.sites.len() + 1);
     let mut sp_el: Vec<usize> = Vec::new();
     let mut sp_occ: Vec<f64> = Vec::new();
