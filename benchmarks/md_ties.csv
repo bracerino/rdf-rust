@@ -1,0 +1,11 @@
+structure_type,rms_displacement_A,atoms,pairs_in_range,distances_on_a_bin_edge
+Cu_fcc_a3.60,0.0,2048,753664,24576
+Cu_fcc_a3.60,0.05,2048,751432,0
+Cu_fcc_a3.60,0.1,2048,739734,0
+Cu_fcc_a3.60,0.2,2048,732120,0
+Cu_fcc_a3.60,0.5,2048,733302,0
+SrTiO3_a3.90,0.0,2560,968704,30720
+SrTiO3_a3.90,0.05,2560,938786,0
+SrTiO3_a3.90,0.1,2560,921968,0
+SrTiO3_a3.90,0.2,2560,908756,0
+SrTiO3_a3.90,0.5,2560,904010,0

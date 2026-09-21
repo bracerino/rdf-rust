@@ -1,0 +1,323 @@
+[
+  {
+    "file": "size_SrTiO3_00040.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 40,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390855
+  },
+  {
+    "file": "size_SrTiO3_00135.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 135,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390854
+  },
+  {
+    "file": "size_SrTiO3_00320.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 320,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390855
+  },
+  {
+    "file": "size_SrTiO3_00625.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 625,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390857
+  },
+  {
+    "file": "size_SrTiO3_01080.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 1080,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390854
+  },
+  {
+    "file": "size_SrTiO3_02560.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 2560,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390855
+  },
+  {
+    "file": "size_SrTiO3_05000.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 5000,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390857
+  },
+  {
+    "file": "size_SrTiO3_08640.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 8640,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390854
+  },
+  {
+    "file": "size_SrTiO3_13720.cif",
+    "group": "size",
+    "kind": "perovskite",
+    "atoms": 13720,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390857
+  },
+  {
+    "file": "type_Cu_fcc_02048.cif",
+    "group": "variety",
+    "kind": "Cu_fcc",
+    "atoms": 2048,
+    "rattle": 0.0,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08467107748473354
+  },
+  {
+    "file": "type_Fe_bcc_02000.cif",
+    "group": "variety",
+    "kind": "Fe_bcc",
+    "atoms": 2000,
+    "rattle": 0.0,
+    "elements": [
+      "Fe"
+    ],
+    "density": 0.08486857630553785
+  },
+  {
+    "file": "type_Si_diamond_02744.cif",
+    "group": "variety",
+    "kind": "Si_diamond",
+    "atoms": 2744,
+    "rattle": 0.0,
+    "elements": [
+      "Si"
+    ],
+    "density": 0.049940234651243184
+  },
+  {
+    "file": "type_Ti_hcp_02000.cif",
+    "group": "variety",
+    "kind": "Ti_hcp",
+    "atoms": 2000,
+    "rattle": 0.0,
+    "elements": [
+      "Ti"
+    ],
+    "density": 0.056616635650503316
+  },
+  {
+    "file": "type_NaCl_rocksalt_02744.cif",
+    "group": "variety",
+    "kind": "NaCl_rocksalt",
+    "atoms": 2744,
+    "rattle": 0.0,
+    "elements": [
+      "Cl",
+      "Na"
+    ],
+    "density": 0.04459156092223911
+  },
+  {
+    "file": "type_SrTiO3_perovskite_02560.cif",
+    "group": "variety",
+    "kind": "SrTiO3_perovskite",
+    "atoms": 2560,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.08396666220390855
+  },
+  {
+    "file": "type_CoCrFeMnNi_hea_02048.cif",
+    "group": "variety",
+    "kind": "CoCrFeMnNi_hea",
+    "atoms": 2048,
+    "rattle": 0.0,
+    "elements": [
+      "Co",
+      "Cr",
+      "Fe",
+      "Mn",
+      "Ni"
+    ],
+    "density": 0.08645231866091237
+  },
+  {
+    "file": "md_Cu_fcc_a3.60_s0.00_02048.cif",
+    "group": "md",
+    "kind": "Cu_fcc_a3.60",
+    "atoms": 2048,
+    "rattle": 0.0,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08573388203017832
+  },
+  {
+    "file": "md_Cu_fcc_a3.60_s0.05_02048.cif",
+    "group": "md",
+    "kind": "Cu_fcc_a3.60",
+    "atoms": 2048,
+    "rattle": 0.05,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08573388203017832
+  },
+  {
+    "file": "md_Cu_fcc_a3.60_s0.10_02048.cif",
+    "group": "md",
+    "kind": "Cu_fcc_a3.60",
+    "atoms": 2048,
+    "rattle": 0.1,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08573388203017832
+  },
+  {
+    "file": "md_Cu_fcc_a3.60_s0.20_02048.cif",
+    "group": "md",
+    "kind": "Cu_fcc_a3.60",
+    "atoms": 2048,
+    "rattle": 0.2,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08573388203017832
+  },
+  {
+    "file": "md_Cu_fcc_a3.60_s0.50_02048.cif",
+    "group": "md",
+    "kind": "Cu_fcc_a3.60",
+    "atoms": 2048,
+    "rattle": 0.5,
+    "elements": [
+      "Cu"
+    ],
+    "density": 0.08573388203017832
+  },
+  {
+    "file": "md_SrTiO3_a3.90_s0.00_02560.cif",
+    "group": "md",
+    "kind": "SrTiO3_a3.90",
+    "atoms": 2560,
+    "rattle": 0.0,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.0842900251184275
+  },
+  {
+    "file": "md_SrTiO3_a3.90_s0.05_02560.cif",
+    "group": "md",
+    "kind": "SrTiO3_a3.90",
+    "atoms": 2560,
+    "rattle": 0.05,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.0842900251184275
+  },
+  {
+    "file": "md_SrTiO3_a3.90_s0.10_02560.cif",
+    "group": "md",
+    "kind": "SrTiO3_a3.90",
+    "atoms": 2560,
+    "rattle": 0.1,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.0842900251184275
+  },
+  {
+    "file": "md_SrTiO3_a3.90_s0.20_02560.cif",
+    "group": "md",
+    "kind": "SrTiO3_a3.90",
+    "atoms": 2560,
+    "rattle": 0.2,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.0842900251184275
+  },
+  {
+    "file": "md_SrTiO3_a3.90_s0.50_02560.cif",
+    "group": "md",
+    "kind": "SrTiO3_a3.90",
+    "atoms": 2560,
+    "rattle": 0.5,
+    "elements": [
+      "O",
+      "Sr",
+      "Ti"
+    ],
+    "density": 0.0842900251184275
+  }
+]

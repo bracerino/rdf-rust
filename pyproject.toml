@@ -1,0 +1,88 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+# Distribution name on PyPI. The import name stays `rdfrust`, which is what
+# `module-name` below pins; pip install rdf-rust, then import rdfrust.
+name = "rdf-rust"
+# Keep in step with the `version` in Cargo.toml.
+version = "0.1.0"
+description = "Fast partial and total radial distribution functions for crystal structures, with native partial-occupancy support"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+authors = [{ name = "IMPLANT team", email = "lebedmi2@cvut.cz" }]
+maintainers = [{ name = "IMPLANT team", email = "lebedmi2@cvut.cz" }]
+keywords = [
+    "rdf",
+    "prdf",
+    "radial-distribution-function",
+    "crystallography",
+    "materials-science",
+    "diffraction",
+    "partial-occupancy",
+    "disorder",
+    "rust",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
+dependencies = ["numpy>=1.20"]
+
+[project.urls]
+Homepage = "https://github.com/bracerino/rdf-rust"
+Repository = "https://github.com/bracerino/rdf-rust"
+Issues = "https://github.com/bracerino/rdf-rust/issues"
+Benchmarks = "https://github.com/bracerino/rdf-rust/blob/main/BENCHMARKS.md"
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30", "plotly>=5.0", "pandas>=1.5", "psutil>=5.9"]
+test = ["pytest>=7.0", "pymatgen", "matminer", "vesin"]
+bench = ["pymatgen", "matminer", "vesin", "psutil>=5.9", "matplotlib>=3.5"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "rdfrust._rdfrust"
+# Files the source distribution needs beyond the Rust crate and python/.
+include = [
+    { path = "LICENSE", format = "sdist" },
+    { path = "README.md", format = "sdist" },
+    { path = "BENCHMARKS.md", format = "sdist" },
+    { path = "RELEASING.md", format = "sdist" },
+    { path = "examples/*.cif", format = "sdist" },
+    { path = "examples/*.py", format = "sdist" },
+    { path = "tests/*.py", format = "sdist" },
+    { path = "benchmarks/*.py", format = "sdist" },
+]
+# The benchmark inputs and figures belong in the repository, not in a package
+# people pip-install: they are 3.8 MB of CIFs and PNGs that no installed copy
+# needs, and `make_structures.py` regenerates the structures exactly.
+exclude = [
+    { path = "benchmarks/structures/**", format = "sdist" },
+    { path = "benchmarks/*.png", format = "sdist" },
+    { path = "benchmarks/*.csv", format = "sdist" },
+    { path = "benchmarks/results*.json", format = "sdist" },
+    { path = "target/**", format = "sdist" },
+    # The online Streamlit app lives in the repo, not in the pip package.
+    { path = "prdf_app.py", format = "sdist" },
+    { path = "cif_repair.py", format = "sdist" },
+    { path = "requirements.txt", format = "sdist" },
+    { path = "xrdlicious_env/**", format = "sdist" },
+]

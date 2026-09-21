@@ -1,0 +1,1437 @@
+{
+  "rows": [
+    {
+      "backend": "matminer",
+      "atoms": 40,
+      "seconds": 0.030955012000049464,
+      "memory_mb": 10.625,
+      "threads": 1,
+      "file": "size_SrTiO3_00040.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "vesin",
+      "atoms": 40,
+      "seconds": 0.0013164829997549532,
+      "memory_mb": 1.5625,
+      "threads": 1,
+      "file": "size_SrTiO3_00040.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 40,
+      "seconds": 0.0006832060007582186,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "size_SrTiO3_00040.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "matminer",
+      "atoms": 135,
+      "seconds": 0.12346464800066315,
+      "memory_mb": 33.765625,
+      "threads": 1,
+      "file": "size_SrTiO3_00135.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "vesin",
+      "atoms": 135,
+      "seconds": 0.0032969230014714412,
+      "memory_mb": 5.0,
+      "threads": 1,
+      "file": "size_SrTiO3_00135.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 135,
+      "seconds": 0.0016653619986755075,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "size_SrTiO3_00135.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "matminer",
+      "atoms": 320,
+      "seconds": 0.3131523699994432,
+      "memory_mb": 77.34765625,
+      "threads": 1,
+      "file": "size_SrTiO3_00320.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "vesin",
+      "atoms": 320,
+      "seconds": 0.014554539999153349,
+      "memory_mb": 9.86328125,
+      "threads": 1,
+      "file": "size_SrTiO3_00320.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 320,
+      "seconds": 0.0063031769986992,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "size_SrTiO3_00320.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "matminer",
+      "atoms": 625,
+      "seconds": 0.6252167359998566,
+      "memory_mb": 150.51171875,
+      "threads": 1,
+      "file": "size_SrTiO3_00625.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "vesin",
+      "atoms": 625,
+      "seconds": 0.04418886999883398,
+      "memory_mb": 19.3828125,
+      "threads": 1,
+      "file": "size_SrTiO3_00625.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 625,
+      "seconds": 0.020726738999655936,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "size_SrTiO3_00625.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "matminer",
+      "atoms": 1080,
+      "seconds": 1.1490684780001175,
+      "memory_mb": 259.7890625,
+      "threads": 1,
+      "file": "size_SrTiO3_01080.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "vesin",
+      "atoms": 1080,
+      "seconds": 0.021647749999829102,
+      "memory_mb": 40.5625,
+      "threads": 1,
+      "file": "size_SrTiO3_01080.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 1080,
+      "seconds": 0.011933104000490857,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "size_SrTiO3_01080.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.840497246999803,
+      "memory_mb": 592.40234375,
+      "threads": 1,
+      "file": "size_SrTiO3_02560.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.04730913899948064,
+      "memory_mb": 92.62109375,
+      "threads": 1,
+      "file": "size_SrTiO3_02560.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.02548647000003257,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "size_SrTiO3_02560.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "matminer",
+      "atoms": 5000,
+      "seconds": 5.582403825999791,
+      "memory_mb": 1152.98046875,
+      "threads": 1,
+      "file": "size_SrTiO3_05000.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "vesin",
+      "atoms": 5000,
+      "seconds": 0.11247445700064418,
+      "memory_mb": 178.19921875,
+      "threads": 1,
+      "file": "size_SrTiO3_05000.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 5000,
+      "seconds": 0.07089811500009091,
+      "memory_mb": 0.46875,
+      "threads": 1,
+      "file": "size_SrTiO3_05000.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "matminer",
+      "atoms": 8640,
+      "seconds": 9.532034544999988,
+      "memory_mb": 1998.62109375,
+      "threads": 1,
+      "file": "size_SrTiO3_08640.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "vesin",
+      "atoms": 8640,
+      "seconds": 0.1893364860006841,
+      "memory_mb": 295.14453125,
+      "threads": 1,
+      "file": "size_SrTiO3_08640.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 8640,
+      "seconds": 0.09503883500110533,
+      "memory_mb": 0.625,
+      "threads": 1,
+      "file": "size_SrTiO3_08640.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390854
+    },
+    {
+      "backend": "matminer",
+      "atoms": 13720,
+      "seconds": 14.322492829998737,
+      "memory_mb": 3178.40625,
+      "threads": 1,
+      "file": "size_SrTiO3_13720.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "vesin",
+      "atoms": 13720,
+      "seconds": 0.2758265440006653,
+      "memory_mb": 454.16796875,
+      "threads": 1,
+      "file": "size_SrTiO3_13720.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 13720,
+      "seconds": 0.14388077100011287,
+      "memory_mb": 0.9375,
+      "threads": 1,
+      "file": "size_SrTiO3_13720.cif",
+      "group": "size",
+      "kind": "perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390857
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.256860764999999,
+      "memory_mb": 461.08203125,
+      "threads": 1,
+      "file": "type_Cu_fcc_02048.cif",
+      "group": "variety",
+      "kind": "Cu_fcc",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08467107748473354
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.039898946000022306,
+      "memory_mb": 69.62109375,
+      "threads": 1,
+      "file": "type_Cu_fcc_02048.cif",
+      "group": "variety",
+      "kind": "Cu_fcc",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08467107748473354
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03402925000000323,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "type_Cu_fcc_02048.cif",
+      "group": "variety",
+      "kind": "Cu_fcc",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08467107748473354
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2000,
+      "seconds": 2.0241602140000055,
+      "memory_mb": 413.55859375,
+      "threads": 1,
+      "file": "type_Fe_bcc_02000.cif",
+      "group": "variety",
+      "kind": "Fe_bcc",
+      "rattle": 0.0,
+      "elements": [
+        "Fe"
+      ],
+      "density": 0.08486857630553785
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2000,
+      "seconds": 0.038442944999985684,
+      "memory_mb": 62.1640625,
+      "threads": 1,
+      "file": "type_Fe_bcc_02000.cif",
+      "group": "variety",
+      "kind": "Fe_bcc",
+      "rattle": 0.0,
+      "elements": [
+        "Fe"
+      ],
+      "density": 0.08486857630553785
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2000,
+      "seconds": 0.02983074299999089,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "type_Fe_bcc_02000.cif",
+      "group": "variety",
+      "kind": "Fe_bcc",
+      "rattle": 0.0,
+      "elements": [
+        "Fe"
+      ],
+      "density": 0.08486857630553785
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2744,
+      "seconds": 1.4795947310000201,
+      "memory_mb": 318.0546875,
+      "threads": 1,
+      "file": "type_Si_diamond_02744.cif",
+      "group": "variety",
+      "kind": "Si_diamond",
+      "rattle": 0.0,
+      "elements": [
+        "Si"
+      ],
+      "density": 0.049940234651243184
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2744,
+      "seconds": 0.03094634000001406,
+      "memory_mb": 49.703125,
+      "threads": 1,
+      "file": "type_Si_diamond_02744.cif",
+      "group": "variety",
+      "kind": "Si_diamond",
+      "rattle": 0.0,
+      "elements": [
+        "Si"
+      ],
+      "density": 0.049940234651243184
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2744,
+      "seconds": 0.021777691000011146,
+      "memory_mb": 0.3125,
+      "threads": 1,
+      "file": "type_Si_diamond_02744.cif",
+      "group": "variety",
+      "kind": "Si_diamond",
+      "rattle": 0.0,
+      "elements": [
+        "Si"
+      ],
+      "density": 0.049940234651243184
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2000,
+      "seconds": 1.3638714770000036,
+      "memory_mb": 291.265625,
+      "threads": 1,
+      "file": "type_Ti_hcp_02000.cif",
+      "group": "variety",
+      "kind": "Ti_hcp",
+      "rattle": 0.0,
+      "elements": [
+        "Ti"
+      ],
+      "density": 0.056616635650503316
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2000,
+      "seconds": 0.025953391000001602,
+      "memory_mb": 44.7734375,
+      "threads": 1,
+      "file": "type_Ti_hcp_02000.cif",
+      "group": "variety",
+      "kind": "Ti_hcp",
+      "rattle": 0.0,
+      "elements": [
+        "Ti"
+      ],
+      "density": 0.056616635650503316
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2000,
+      "seconds": 0.01761397900000361,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "type_Ti_hcp_02000.cif",
+      "group": "variety",
+      "kind": "Ti_hcp",
+      "rattle": 0.0,
+      "elements": [
+        "Ti"
+      ],
+      "density": 0.056616635650503316
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2744,
+      "seconds": 1.424762353999995,
+      "memory_mb": 298.40234375,
+      "threads": 1,
+      "file": "type_NaCl_rocksalt_02744.cif",
+      "group": "variety",
+      "kind": "NaCl_rocksalt",
+      "rattle": 0.0,
+      "elements": [
+        "Cl",
+        "Na"
+      ],
+      "density": 0.04459156092223911
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2744,
+      "seconds": 0.02878921500001752,
+      "memory_mb": 46.671875,
+      "threads": 1,
+      "file": "type_NaCl_rocksalt_02744.cif",
+      "group": "variety",
+      "kind": "NaCl_rocksalt",
+      "rattle": 0.0,
+      "elements": [
+        "Cl",
+        "Na"
+      ],
+      "density": 0.04459156092223911
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2744,
+      "seconds": 0.022894994000012048,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "type_NaCl_rocksalt_02744.cif",
+      "group": "variety",
+      "kind": "NaCl_rocksalt",
+      "rattle": 0.0,
+      "elements": [
+        "Cl",
+        "Na"
+      ],
+      "density": 0.04459156092223911
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.894918638000007,
+      "memory_mb": 592.48046875,
+      "threads": 1,
+      "file": "type_SrTiO3_perovskite_02560.cif",
+      "group": "variety",
+      "kind": "SrTiO3_perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.04795675299999402,
+      "memory_mb": 90.2421875,
+      "threads": 1,
+      "file": "type_SrTiO3_perovskite_02560.cif",
+      "group": "variety",
+      "kind": "SrTiO3_perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.024079534999998486,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "type_SrTiO3_perovskite_02560.cif",
+      "group": "variety",
+      "kind": "SrTiO3_perovskite",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.08396666220390855
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.1306138570000144,
+      "memory_mb": 461.26953125,
+      "threads": 1,
+      "file": "type_CoCrFeMnNi_hea_02048.cif",
+      "group": "variety",
+      "kind": "CoCrFeMnNi_hea",
+      "rattle": 0.0,
+      "elements": [
+        "Co",
+        "Cr",
+        "Fe",
+        "Mn",
+        "Ni"
+      ],
+      "density": 0.08645231866091237
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.049578504999999495,
+      "memory_mb": 69.87890625,
+      "threads": 1,
+      "file": "type_CoCrFeMnNi_hea_02048.cif",
+      "group": "variety",
+      "kind": "CoCrFeMnNi_hea",
+      "rattle": 0.0,
+      "elements": [
+        "Co",
+        "Cr",
+        "Fe",
+        "Mn",
+        "Ni"
+      ],
+      "density": 0.08645231866091237
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03680729100000235,
+      "memory_mb": 0.3125,
+      "threads": 1,
+      "file": "type_CoCrFeMnNi_hea_02048.cif",
+      "group": "variety",
+      "kind": "CoCrFeMnNi_hea",
+      "rattle": 0.0,
+      "elements": [
+        "Co",
+        "Cr",
+        "Fe",
+        "Mn",
+        "Ni"
+      ],
+      "density": 0.08645231866091237
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.1462607499999535,
+      "memory_mb": 461.2734375,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.00_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.04180835099998603,
+      "memory_mb": 72.9140625,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.00_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03604703899998185,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.00_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.0,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.2023800160000064,
+      "memory_mb": 459.95703125,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.05_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.05,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.046907707999992,
+      "memory_mb": 69.71484375,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.05_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.05,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03539075800000546,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.05_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.05,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.0575037489999772,
+      "memory_mb": 452.8671875,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.10_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.1,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.046693242000003465,
+      "memory_mb": 69.78515625,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.10_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.1,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03481401700003062,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.10_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.1,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.0488613420000092,
+      "memory_mb": 448.328125,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.20_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.2,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.048757459000000836,
+      "memory_mb": 67.984375,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.20_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.2,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03523645400002806,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.20_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.2,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2048,
+      "seconds": 2.0537774160000026,
+      "memory_mb": 448.953125,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.50_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.5,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2048,
+      "seconds": 0.05287568400001419,
+      "memory_mb": 68.09765625,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.50_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.5,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2048,
+      "seconds": 0.03509250100000827,
+      "memory_mb": 0.0,
+      "threads": 1,
+      "file": "md_Cu_fcc_a3.60_s0.50_02048.cif",
+      "group": "md",
+      "kind": "Cu_fcc_a3.60",
+      "rattle": 0.5,
+      "elements": [
+        "Cu"
+      ],
+      "density": 0.08573388203017832
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.8172533460000295,
+      "memory_mb": 592.4453125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.00_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.04782334700001911,
+      "memory_mb": 90.2578125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.00_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.02423791699999356,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.00_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.0,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.646570306000001,
+      "memory_mb": 574.203125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.05_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.05,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.05086134699996592,
+      "memory_mb": 90.78515625,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.05_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.05,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.02482095999999956,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.05_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.05,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.6481864270000415,
+      "memory_mb": 563.83203125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.10_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.1,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.05300779000003786,
+      "memory_mb": 86.43359375,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.10_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.1,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.024643541999978424,
+      "memory_mb": 0.3125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.10_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.1,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.6352608839999903,
+      "memory_mb": 555.95703125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.20_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.2,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.053916000000015174,
+      "memory_mb": 86.35546875,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.20_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.2,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.026615602999982002,
+      "memory_mb": 0.3125,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.20_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.2,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "matminer",
+      "atoms": 2560,
+      "seconds": 2.552505490000044,
+      "memory_mb": 552.6796875,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.50_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.5,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "vesin",
+      "atoms": 2560,
+      "seconds": 0.054639938000036636,
+      "memory_mb": 84.3515625,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.50_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.5,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    },
+    {
+      "backend": "rdfrust",
+      "atoms": 2560,
+      "seconds": 0.025310536999995747,
+      "memory_mb": 0.15625,
+      "threads": 1,
+      "file": "md_SrTiO3_a3.90_s0.50_02560.cif",
+      "group": "md",
+      "kind": "SrTiO3_a3.90",
+      "rattle": 0.5,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "density": 0.0842900251184275
+    }
+  ],
+  "agreement": {
+    "size_SrTiO3_00040.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 15136
+    },
+    "size_SrTiO3_00135.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 51084
+    },
+    "size_SrTiO3_00320.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 121088
+    },
+    "size_SrTiO3_00625.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 236500
+    },
+    "size_SrTiO3_01080.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 408672
+    },
+    "size_SrTiO3_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 968704
+    },
+    "size_SrTiO3_05000.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 1892000
+    },
+    "size_SrTiO3_08640.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 3269376
+    },
+    "size_SrTiO3_13720.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.901790328059917e-15,
+      "ties": 0,
+      "pairs": 5191648
+    },
+    "type_Cu_fcc_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.1926679083203382e-15,
+      "ties": 0,
+      "pairs": 753664
+    },
+    "type_Fe_bcc_02000.cif": {
+      "vesin": 0.0,
+      "rdfrust": 3.3502139546205442e-15,
+      "ties": 0,
+      "pairs": 676000
+    },
+    "type_Si_diamond_02744.cif": {
+      "vesin": 0.0,
+      "rdfrust": 1.6803097144864761e-15,
+      "ties": 0,
+      "pairs": 521360
+    },
+    "type_Ti_hcp_02000.cif": {
+      "vesin": 0.0,
+      "rdfrust": 1.7944308340365998e-15,
+      "ties": 0,
+      "pairs": 476000
+    },
+    "type_NaCl_rocksalt_02744.cif": {
+      "vesin": 0.0,
+      "rdfrust": 1.7233752019132696e-15,
+      "ties": 0,
+      "pairs": 488432
+    },
+    "type_SrTiO3_perovskite_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.813857287815677e-15,
+      "ties": 0,
+      "pairs": 968704
+    },
+    "type_CoCrFeMnNi_hea_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.0849532398038216e-15,
+      "ties": 0,
+      "pairs": 753664
+    },
+    "md_Cu_fcc_a3.60_s0.00_02048.cif": {
+      "vesin": 0.003178147319730609,
+      "rdfrust": 0.11667553218050215,
+      "ties": 24576,
+      "pairs": 753664
+    },
+    "md_Cu_fcc_a3.60_s0.05_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.1345830542874885e-15,
+      "ties": 0,
+      "pairs": 751432
+    },
+    "md_Cu_fcc_a3.60_s0.10_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.2623855175862332e-15,
+      "ties": 0,
+      "pairs": 739734
+    },
+    "md_Cu_fcc_a3.60_s0.20_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.916962012744555e-15,
+      "ties": 0,
+      "pairs": 732120
+    },
+    "md_Cu_fcc_a3.60_s0.50_02048.cif": {
+      "vesin": 0.0,
+      "rdfrust": 5.4558191627408354e-15,
+      "ties": 0,
+      "pairs": 733302
+    },
+    "md_SrTiO3_a3.90_s0.00_02560.cif": {
+      "vesin": 0.014616009856832323,
+      "rdfrust": 0.1388520936399067,
+      "ties": 30720,
+      "pairs": 968704
+    },
+    "md_SrTiO3_a3.90_s0.05_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.6122882994726347e-15,
+      "ties": 0,
+      "pairs": 938786
+    },
+    "md_SrTiO3_a3.90_s0.10_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.7564316288806634e-15,
+      "ties": 0,
+      "pairs": 921968
+    },
+    "md_SrTiO3_a3.90_s0.20_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 2.707156307237618e-15,
+      "ties": 0,
+      "pairs": 908756
+    },
+    "md_SrTiO3_a3.90_s0.50_02560.cif": {
+      "vesin": 0.0,
+      "rdfrust": 4.336344969959972e-15,
+      "ties": 0,
+      "pairs": 904010
+    }
+  }
+}

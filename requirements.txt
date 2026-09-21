@@ -1,0 +1,14 @@
+# Online (Streamlit) version of the (P)RDF app: prdf_app.py
+# Versions are the ones the app was tested with.
+rdf-rust==0.1.0
+streamlit==1.57.0
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.1
+matplotlib==3.10.3
+plotly==6.1.2
+ase==3.25.0
+pymatgen==2025.10.7
+matminer==0.9.3
+vesin==0.6.1
+psutil==7.0.0
