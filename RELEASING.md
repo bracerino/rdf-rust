@@ -1,16 +1,10 @@
 # Releasing
 
-One-time setup on PyPI: add a **Trusted Publisher** for this repository
-(PyPI → the project → Publishing → GitHub), with
-
-| field | value |
-|---|---|
-| owner | `bracerino` |
-| repository | `rdf-rust` |
-| workflow | `release.yml` |
-| environment | `pypi` |
-
-That replaces an API token, so no secret has to live in the repo.
+One-time setup: store a PyPI API token as a repository secret named
+**`PYPI_API_TOKEN`** (GitHub → Settings → Secrets and variables → Actions →
+New repository secret). The token must be allowed to upload `rdf-rust`: for
+the very first upload that means an account-wide token, since a token scoped
+to another project cannot create a new one.
 
 To cut a release:
 
