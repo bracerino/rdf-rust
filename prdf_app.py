@@ -1112,10 +1112,11 @@ CITATIONS = {
         "(https://doi.org/10.1063/5.0304911)"
     ),
     BACKEND_RDFRUST: (
-        "**RDF-Rust** — used for this calculation:  \n"
-        "  [RDF-Rust: fast partial and total radial distribution functions with native "
-        "partial-occupancy support. Software.](https://github.com/bracerino/rdf-rust)  \n"
-        "  *(software; replace with the RDF-Rust publication once it is out)*"
+        "**RDF-Rust** — used for this calculation; it is part of the XRD-Rust project:  \n"
+        "  [LEBEDA, Miroslav, et al. *Rust-accelerated powder X-ray diffraction simulation "
+        "for high-throughput and machine-learning-driven materials science.* "
+        "Journal of Applied Crystallography, 2026, 59.4: 1344–1350.]"
+        "(https://journals.iucr.org/j/issues/2026/04/00/hat5023/index.html)"
     ),
 }
 with _cite_slot:

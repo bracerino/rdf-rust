@@ -4,30 +4,16 @@ Partial and total radial distribution functions (PRDF / RDF) for crystal
 structures, with native support for partially occupied sites.
 
 **⚙️ Rust backend, 🐍 Python frontend.** The neighbour search, the histogramming
-and the CIF parsing run in compiled Rust, in parallel across cores. You call it
-from Python and get NumPy arrays back.
+and the CIF parsing run in compiled Rust, in parallel across cores.
 
-- 🚀 **~100× faster than Matminer on a single core**, and **~340× faster on four
+- **~100× faster than Matminer on a single core**, and **~340× faster on four
   cores**: 13,720 atoms in 144 ms (42 ms on four cores) instead of 14.3 s.
 - ⚡ **~2× faster than Vesin, core for core** (1.5–2.2×).
-- 💾 **Under 1 MB of memory at any size.** Matminer needs 3.2 GB and Vesin
+- **Under 1 MB of memory at any size.** Matminer needs 3.2 GB and Vesin
   454 MB for the same 13,720 atoms.
-- 🧩 **Partial occupancies handled directly**: no supercell, no random seed.
+- **Partial occupancies handled directly**: no supercell, no random seed.
 
 ---
-
-## 🌐 Online app
-
-Use it in the browser, nothing to install:
-**[prdf-xrdlicious.streamlit.app](https://prdf-xrdlicious.streamlit.app/)**
-
-`prdf_app.py` in this repository is that app: the XRDlicious (P)RDF calculator,
-with RDF-Rust, Vesin and Matminer as selectable methods. To run it locally:
-
-```bash
-pip install -r requirements.txt
-streamlit run prdf_app.py
-```
 
 ## Install
 
@@ -65,8 +51,7 @@ s.prdf(cutoff=10.0, bin_size=0.1, save_plots="rdf_plots", title="BaSrTiO3")
 ```
 
 This writes `total_rdf.png`, `partial_rdfs.png` (all pairs together),
-one `partial_A-B.png` per pair, and `rdf.csv`. Needs matplotlib
-(`pip install "rdf-rust[plot]"`).
+one `partial_A-B.png` per pair, and `rdf.csv`.
 
 ## 🎞️ MD trajectories
 
@@ -89,6 +74,19 @@ With `save_plots` it writes the **trajectory-averaged** total and partial RDFs
 frame (`total_rdf_animation.gif`, `partial_rdfs_animation.gif`), and the data
 as CSV.
 
+It also writes **`rdf_animation.html`**, an interactive player: play and pause,
+step frame by frame, drag through the run with a slider, change the speed from
+0.25× to 8×, and use the keyboard (space, arrows, + and −). Both animations move
+together. The page is a single file that works offline.
+
+While it runs, progress is printed with the time elapsed and the time left:
+
+```
+[rdfrust] data.xyz: using 101 of 505 frame(s) (every 5, from frame 0), read in 0.4 s
+[rdfrust] frames  20/101 ( 20%)  4.1 s elapsed, ~16.6 s left
+[rdfrust] frames  40/101 ( 40%)  8.2 s elapsed, ~12.5 s left
+```
+
 - Frames with their own `Lattice="..."` keep their own box, so NPT runs work.
 - Plain XYZ has no cell: pass it with `cell=[a, b, c]` or a 3×3 matrix.
 - Unwrapped coordinates (atoms outside the box) are handled.
@@ -97,6 +95,19 @@ as CSV.
 
 A runnable demo that writes and analyses a small trajectory:
 [`examples/md_trajectory.py`](https://github.com/bracerino/rdf-rust/blob/main/examples/md_trajectory.py).
+
+## 🌐 Online app
+
+Use it in the browser, nothing to install:
+**[prdf-xrdlicious.streamlit.app](https://prdf-xrdlicious.streamlit.app/)**
+
+`prdf_app.py` in this repository is that app: the XRDlicious (P)RDF calculator,
+with RDF-Rust, Vesin and Matminer as selectable methods. To run it locally:
+
+```bash
+pip install -r requirements.txt
+streamlit run prdf_app.py
+```
 
 ## 🚀 Speed and 💾 memory
 

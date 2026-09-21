@@ -7,7 +7,7 @@ build-backend = "maturin"
 # `module-name` below pins; pip install rdf-rust, then import rdfrust.
 name = "rdf-rust"
 # Keep in step with the `version` in Cargo.toml.
-version = "0.2.0"
+version = "0.3.0"
 description = "Fast partial and total radial distribution functions for crystal structures, with native partial-occupancy support"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -43,7 +43,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Physics",
     "Typing :: Typed",
 ]
-dependencies = ["numpy>=1.20"]
+dependencies = ["numpy>=1.20", "matplotlib>=3.5"]
 
 [project.urls]
 Homepage = "https://github.com/bracerino/rdf-rust"
@@ -52,9 +52,8 @@ Issues = "https://github.com/bracerino/rdf-rust/issues"
 Benchmarks = "https://github.com/bracerino/rdf-rust/blob/main/BENCHMARKS.md"
 
 [project.optional-dependencies]
-plot = ["matplotlib>=3.5"]
 app = ["streamlit>=1.30", "plotly>=5.0", "pandas>=1.5", "psutil>=5.9"]
-test = ["pytest>=7.0", "pymatgen", "matminer", "vesin", "matplotlib>=3.5"]
+test = ["pytest>=7.0", "pymatgen", "matminer", "vesin"]
 bench = ["pymatgen", "matminer", "vesin", "psutil>=5.9", "matplotlib>=3.5"]
 
 [tool.maturin]

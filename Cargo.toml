@@ -1,6 +1,6 @@
 [package]
 name = "rdf-rust"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 description = "Fast partial and total radial distribution functions, with native support for partially occupied crystal structures"
 license = "MIT"

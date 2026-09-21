@@ -156,10 +156,15 @@ def test_trajectory_plots_and_animation(tmp_path):
     res = rdfrust.trajectory_prdf(path, cutoff=6.0, bin_size=0.1, every=2,
                                   save_plots=str(out), verbose=False)
     for key in ("total", "partials", "csv", "per_frame_csv",
-                "total_animation", "partials_animation"):
+                "total_animation", "partials_animation", "html"):
         assert os.path.exists(res.files[key]), key
     with Image.open(res.files["total_animation"]) as im:
         assert im.n_frames == 5
+    # The HTML player is self-contained: every frame embedded, nothing fetched.
+    page = open(res.files["html"], encoding="utf-8").read()
+    assert page.count("data:image/png;base64,") == 2 * 5
+    assert '"frames": [0, 2, 4, 6, 8]' in page
+    assert "http://" not in page and "https://" not in page
     per_frame = np.genfromtxt(res.files["per_frame_csv"], delimiter=",", skip_header=1)
     assert per_frame.shape[0] == 5
 
@@ -175,3 +180,24 @@ def test_animation_is_capped(tmp_path):
     assert len(res.frames) == 12                   # the average uses them all
     with Image.open(res.files["total_animation"]) as im:
         assert im.n_frames == 4
+
+
+def test_html_can_be_switched_off(tmp_path):
+    pytest.importorskip("matplotlib")
+    path = tmp_path / "t.xyz"
+    write_xyz(path, 4)
+    res = rdfrust.trajectory_prdf(path, cutoff=5.0, bin_size=0.2, save_plots=str(tmp_path / "o"),
+                                  html=False, verbose=False)
+    assert "html" not in res.files and "total_animation" in res.files
+
+
+def test_progress_is_reported(tmp_path, capsys):
+    path = tmp_path / "t.xyz"
+    write_xyz(path, 6)
+    rdfrust.trajectory_prdf(path, cutoff=5.0, bin_size=0.2, every=2)
+    err = capsys.readouterr().err
+    assert "using 3 of 6 frame(s)" in err
+    assert "frames 3/3 (100%)" in err
+    assert "finished in" in err
+    rdfrust.trajectory_prdf(path, cutoff=5.0, bin_size=0.2, verbose=False)
+    assert capsys.readouterr().err == ""
