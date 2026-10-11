@@ -1,0 +1,3 @@
+[server]
+# Maximum size, in MB, of files uploaded through st.file_uploader.
+maxUploadSize = 10

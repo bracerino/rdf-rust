@@ -147,7 +147,6 @@ from pymatgen.transformations.standard_transformations import OrderDisorderedStr
 from matminer.featurizers.structure import PartialRadialDistributionFunction
 
 MAX_SUPERCELL_ATOMS = 750
-MAX_SPECIES = 6
 
 
 # ---------------------------------------------------------------------------
@@ -181,12 +180,19 @@ BACKEND_DASH = {BACKEND_MATMINER: "solid", BACKEND_VESIN: "dash", BACKEND_RDFRUS
 #
 #   Matminer      750 atoms   ~175 MB
 #   Vesin       5,000 atoms   ~176 MB    (same memory budget, 6.7x the atoms)
-#   RDF-Rust   50,000 atoms     ~3 MB
+#   RDF-Rust  100,000 atoms     ~3 MB
+#
+# These caps protect the shared Streamlit Community Cloud instance, which runs
+# the app from /mount/src. A local copy has the whole machine to itself, so the
+# caps there are raised 20x.
+IS_CLOUD = os.path.abspath(__file__).startswith("/mount/src") or os.environ.get("HOSTNAME") == "streamlit"
 BACKEND_MAX_ATOMS = {
     BACKEND_MATMINER: 750,
     BACKEND_VESIN: 5_000,
-    BACKEND_RDFRUST: 50_000,
+    BACKEND_RDFRUST: 100_000,
 }
+if not IS_CLOUD:
+    BACKEND_MAX_ATOMS = {b: n * 20 for b, n in BACKEND_MAX_ATOMS.items()}
 MAX_ATOMS = max(BACKEND_MAX_ATOMS.values())
 
 # How many random fillings of a disordered cell each backend can reasonably be
@@ -470,11 +476,27 @@ def _cif_has_partial_occupancy(cif_text: str) -> bool:
     return any(abs(o - 1.0) > 0.01 for o in _cif_site_occupancies(cif_text))
 
 
+STRUCTURE_SUFFIXES = ["cif", "xyz", "vasp", "poscar", "lmp", "data", "xsf", "pw", "cfg"]
+
+
+def _is_vasp_name(name: str) -> bool:
+    # VASP files are usually named POSCAR / CONTCAR with no extension, or with
+    # a tag appended (POSCAR_relaxed, POSCAR.1), which no extension filter catches.
+    return os.path.basename(name).upper().startswith(("POSCAR", "CONTCAR"))
+
+
 def load_structure_from_file(uploaded_file) -> Structure:
     suffix = uploaded_file.name.rsplit(".", 1)[-1].lower()
+    is_vasp = _is_vasp_name(uploaded_file.name)
+    if suffix not in STRUCTURE_SUFFIXES and not is_vasp:
+        raise ValueError(
+            "unsupported file type; expected "
+            + ", ".join(f".{x}" for x in STRUCTURE_SUFFIXES)
+            + ", or a file named POSCAR* / CONTCAR*"
+        )
     raw = uploaded_file.read()
     uploaded_file.seek(0)
-    if suffix == "cif":
+    if suffix == "cif" and not is_vasp:
         cif_text = raw.decode("utf-8", errors="replace")
         struct = None
         try:
@@ -519,7 +541,7 @@ def load_structure_from_file(uploaded_file) -> Structure:
         "cfg": "cfg",
         "pw": "espresso-in",
     }
-    ase_fmt = fmt_map.get(suffix, None)
+    ase_fmt = "vasp" if is_vasp else fmt_map.get(suffix, None)
     with tempfile.NamedTemporaryFile(delete=False, suffix=f".{suffix}") as tmp:
         tmp.write(raw)
         tmp_path = tmp.name
@@ -532,25 +554,12 @@ def load_structure_from_file(uploaded_file) -> Structure:
 
 def validate_structure(struct: Structure):
     n_atoms = len(struct)
-    species = set()
-    for site in struct:
-        if site.is_ordered:
-            species.add(site.specie.symbol)
-        else:
-            for sp in site.species:
-                species.add(sp.symbol)
-    n_sp = len(species)
     if n_atoms > MAX_ATOMS:
         return (
             False,
             f"Structure has **{n_atoms} atoms**, which exceeds the largest limit any backend "
             f"supports (**{MAX_ATOMS:,}**, rdfrust). Please use a smaller supercell or a "
             f"primitive cell.",
-        )
-    if n_sp > MAX_SPECIES:
-        return (
-            False,
-            f"Structure has **{n_sp} element types**, which exceeds the limit of **{MAX_SPECIES}**. Please use a structure with fewer species.",
         )
     return (True, "")
 
@@ -827,19 +836,21 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.info(
-    f"Upload one or more crystal structure files in the **sidebar** and press **▶️ Calculate RDF**. Each structure is processed **individually**. Use the **🔀 Comparison** tab to overlay PRDFs from different structures.  \n⚠️ Limits: **max {MAX_SPECIES} element types**, and an atom cap that depends on the backend — **{BACKEND_MAX_ATOMS[BACKEND_RDFRUST]:,}** for RDF-Rust, **{BACKEND_MAX_ATOMS[BACKEND_VESIN]:,}** for Vesin, **{BACKEND_MAX_ATOMS[BACKEND_MATMINER]:,}** for Matminer. To increase this limit or to have a stable personal version, please compile the app locally from **[GitHub](https://github.com/bracerino/rdf-rust)**, open file prdf_app.py, and change the values in BACKEND_MAX_ATOMS. Disordered CIFs are auto-converted to vacancy supercells capped at **{MAX_SUPERCELL_ATOMS} sites** (vacancies placed randomly).  \n⚙️ Pick the **calculation method** below — *RDF-Rust*, *Vesin*, *Matminer*, or **all three at once** to see their speed, memory and curves side by side."
+    f"Upload one or more crystal structure files in the **sidebar** and press **▶️ Calculate RDF**. Use the **🔀 Comparison** tab to overlay PRDFs from different structures.  \n📏 **Limits:** an atom cap that depends on the backend — **{BACKEND_MAX_ATOMS[BACKEND_RDFRUST]:,}** for RDF-Rust, **{BACKEND_MAX_ATOMS[BACKEND_VESIN]:,}** for Vesin, **{BACKEND_MAX_ATOMS[BACKEND_MATMINER]:,}** for Matminer. Disordered CIFs are auto-converted to vacancy supercells capped at **{MAX_SUPERCELL_ATOMS} sites** (vacancies placed randomly)."
 )
 # Filled in further down, once the calculation method is known, so that only
 # the backends actually in use are listed.
 _cite_slot = st.container()
 
 st.sidebar.info(
-    "🌀 Developed by **[IMPLANT team](https://implant.fs.cvut.cz/)**. Spot a bug or have a feature idea? Let us know at: **lebedmi2@cvut.cz**. To compile the full app locally, visit our **[GitHub page](https://github.com/bracerino/xrdlicious)**. If you use this tool, please cite the **[article in IUCr](https://journals.iucr.org/j/issues/2025/05/00/hat5006/index.html)**. ❤️🫶 **[Donations always appreciated!](https://buymeacoffee.com/bracerino)**"
+    "🌀 Developed by **[IMPLANT team](https://implant.fs.cvut.cz/)**. Spot a bug or have a feature idea? Let us know at: **lebedmi2@cvut.cz**. To compile the full app locally, visit our **[GitHub page](https://github.com/bracerino/rdf-rust)**. If you use this tool, please cite the **[article in IUCr](https://journals.iucr.org/j/issues/2025/05/00/hat5006/index.html)**. 🫶 **[Donations always appreciated!](https://buymeacoffee.com/bracerino)**"
 )
 st.sidebar.header("📁 Upload Structure Files")
 uploaded_files = st.sidebar.file_uploader(
     "CIF, POSCAR, LMP, XSF, XYZ (with cell), CFG, PW …",
-    type=["cif", "xyz", "vasp", "poscar", "lmp", "data", "xsf", "pw", "cfg"],
+    # No type filter: it matches extensions only and would block a bare
+    # POSCAR / CONTCAR. load_structure_from_file checks the type instead.
+    type=None,
     accept_multiple_files=True,
     key="prdf_uploader",
 )
