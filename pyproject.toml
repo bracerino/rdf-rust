@@ -83,6 +83,8 @@ exclude = [
     # The online Streamlit app lives in the repo, not in the pip package.
     { path = "prdf_app.py", format = "sdist" },
     { path = "cif_repair.py", format = "sdist" },
+    { path = "branding.py", format = "sdist" },
+    { path = "images/**", format = "sdist" },
     { path = "requirements.txt", format = "sdist" },
     { path = "xrdlicious_env/**", format = "sdist" },
 ]

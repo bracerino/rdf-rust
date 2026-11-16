@@ -124,6 +124,8 @@ css = """
     box-shadow: 0 2px 6px rgba(30, 58, 138, 0.3) !important;
 }
 
+.stTabs [data-testid="stTab"]:focus,
+.stTabs [data-testid="stTab"][data-focus-visible],
 .stTabs [data-baseweb="tab-list"] button:focus {
     outline: none !important;
 }
@@ -145,6 +147,7 @@ from pymatgen.core import Structure
 from pymatgen.io.cif import CifParser, CifWriter
 from pymatgen.transformations.standard_transformations import OrderDisorderedStructureTransformation
 from matminer.featurizers.structure import PartialRadialDistributionFunction
+from branding import render_about, render_supporters
 
 MAX_SUPERCELL_ATOMS = 750
 
@@ -842,12 +845,11 @@ st.info(
 # the backends actually in use are listed.
 _cite_slot = st.container()
 
-st.sidebar.info(
-    "🌀 Developed by **[IMPLANT team](https://implant.fs.cvut.cz/)**. Spot a bug or have a feature idea? Let us know at: **lebedmi2@cvut.cz**. To compile the full app locally, visit our **[GitHub page](https://github.com/bracerino/rdf-rust)**. If you use this tool, please cite the **[article in IUCr](https://journals.iucr.org/j/issues/2025/05/00/hat5006/index.html)**. 🫶 **[Donations always appreciated!](https://buymeacoffee.com/bracerino)**"
-)
+render_about(st.sidebar)
 st.sidebar.header("📁 Upload Structure Files")
 uploaded_files = st.sidebar.file_uploader(
-    "CIF, POSCAR, LMP, XSF, XYZ (with cell), CFG, PW …",
+    "Select structure file(s)",
+    help="Supported formats: CIF, POSCAR / CONTCAR, LMP, XSF, XYZ (with cell), CFG, PW …",
     # No type filter: it matches extensions only and would block a bare
     # POSCAR / CONTCAR. load_structure_from_file checks the type instead.
     type=None,
@@ -856,11 +858,9 @@ uploaded_files = st.sidebar.file_uploader(
 )
 st.sidebar.markdown("---")
 st.sidebar.header("📂 Upload Experimental Data")
-st.sidebar.caption(
-    "Two-column files (r, intensity) in any text format – CSV, TSV, space-separated, etc. Comment lines starting with **#** are skipped."
-)
 uploaded_exp_files = st.sidebar.file_uploader(
     "Select experimental data file(s)",
+    help="Two-column files (r, intensity) in any text format – CSV, TSV, space-separated, etc. Comment lines starting with **#** are skipped.",
     type=["csv", "txt", "dat", "xy", "gr", "xye"],
     accept_multiple_files=True,
     key="exp_uploader",
@@ -971,6 +971,9 @@ if structures:
                 for sp in site.species:
                     sp_set.add(sp.symbol)
         st.sidebar.caption(f"• {sname}  ({len(s)} atoms, {len(sp_set)} species)")
+# Rendered here, after the last sidebar element, rather than at the end of the
+# script: the st.stop() calls further down would otherwise skip it.
+render_supporters(st.sidebar)
 st.subheader(
     "⚙️ Settings",
     help="PRDF describes atom-pair distance distributions, providing insight into local environments and structural disorder. Values are unitless relative intensities. Peaks = preferred bonding distances; peak width = disorder.",
